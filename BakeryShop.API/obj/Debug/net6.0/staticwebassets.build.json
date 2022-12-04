@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3XAsyOxzGTuEJzyLDSbYqwWlZanp86fJhyE8IkiGExQ=",
+  "Source": "BakeryShop.API",
+  "BasePath": "_content/BakeryShop.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
