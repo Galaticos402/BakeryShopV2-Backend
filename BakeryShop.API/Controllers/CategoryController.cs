@@ -9,6 +9,7 @@ using BakeryShop.Data.Repository.Impl;
 using BakeryShop.Data.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using BakeryShop.Data.Service;
 
 namespace BakeryShop.API.Controllers
 {
@@ -19,9 +20,11 @@ namespace BakeryShop.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ICategoryRepository _categoryRepository;
-        public CategoryController(IMapper mapper, ICategoryRepository categoryRepository)
+        private readonly IFileService _fileService;
+        public CategoryController(IMapper mapper, ICategoryRepository categoryRepository, IFileService fileService)
         {
             _mapper = mapper;
+            _fileService = fileService;
             _categoryRepository = categoryRepository;
         }
         [HttpGet]
@@ -44,7 +47,18 @@ namespace BakeryShop.API.Controllers
             }
             else
             {
-                response.Result = transaction.Resposne;
+                var categories = transaction.Resposne;
+                var formattedCategories = new List<Category>();
+                foreach (var category in categories)
+                {
+                    var imageUrl = _fileService.GetFileUri(category.ImageName);
+                    var backgroundImageUrl = _fileService.GetFileUri(category.ThumbnailImage);
+                    var clonedCategory = category.Clone();
+                    clonedCategory.ImageName = imageUrl;
+                    clonedCategory.ThumbnailImage = backgroundImageUrl;
+                    formattedCategories.Add(clonedCategory);
+                }
+                response.Result = formattedCategories;
                 response.StatusCode = Ok().StatusCode;
                 return Ok(response);
             }
@@ -68,7 +82,9 @@ namespace BakeryShop.API.Controllers
             }
             else
             {
-                response.Result = transactionResult.Resposne;
+                var category = transactionResult.Resposne.Clone();
+                category.ThumbnailImage = _fileService.GetFileUri(category.ThumbnailImage);
+                response.Result = category;
                 response.StatusCode = Ok().StatusCode;
                 return Ok(response);
             }

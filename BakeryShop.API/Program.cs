@@ -1,6 +1,8 @@
 using AutoMapper;
 using BakeryShop.API.Extensions;
 using BakeryShop.BusinessObject;
+using BakeryShop.Data.Config;
+using BakeryShop.Data.Config.impl;
 using BakeryShop.Data.Repository;
 using BakeryShop.Data.Repository.Impl;
 using BakeryShop.Data.Service;
@@ -9,6 +11,7 @@ using BakeryShop.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Azure;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -25,7 +28,15 @@ builder.Services.AddTransient(typeof(ICategoryRepository), typeof(CategoryReposi
 builder.Services.AddTransient(typeof(IOrderRepository), typeof(OrderRepository));
 builder.Services.AddTransient(typeof(IBranchRepository), typeof(BranchRepository));
 builder.Services.AddTransient(typeof(IOrderDetailRepository), typeof(OrderDetailRepository));
+builder.Services.AddTransient(typeof(IFileService), typeof(FileService));
+builder.Services.AddTransient(typeof(IFileConfiguration), typeof(FileConfiguration));
 builder.Services.AddControllers();
+
+builder.Services.AddAzureClients(b =>
+{
+    b.AddBlobServiceClient(config.GetSection("FileStorage:ConnectionString"));
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(setup => {

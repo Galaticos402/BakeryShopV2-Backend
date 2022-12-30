@@ -154,3 +154,12 @@ C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\obj\Debug
 C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\obj\Debug\net6.0\BakeryShop.API.pdb
 C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\obj\Debug\net6.0\BakeryShop.API.genruntimeconfig.cache
 C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\obj\Debug\net6.0\ref\BakeryShop.API.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Azure.Storage.Blobs.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Azure.Storage.Common.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\System.IO.Hashing.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Microsoft.Extensions.Azure.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.API\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll

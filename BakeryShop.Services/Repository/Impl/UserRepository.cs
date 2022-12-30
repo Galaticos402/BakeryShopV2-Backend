@@ -93,6 +93,7 @@ namespace BakeryShop.Data.Repository.Impl
         public async Task<ApplicationUser> GetUserByCredentials(string username, string password)
         {
             var user = await _userManager.FindByNameAsync(username);
+            if (user == null) return null;
             var Ismatch = _userManager.PasswordHasher.VerifyHashedPassword(user, user.PasswordHash, password); 
             if(Ismatch != PasswordVerificationResult.Success)
             {

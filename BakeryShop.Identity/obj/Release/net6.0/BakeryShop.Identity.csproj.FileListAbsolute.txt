@@ -1,0 +1,14 @@
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\bin\Release\net6.0\BakeryShop.Identity.deps.json
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\bin\Release\net6.0\BakeryShop.Identity.runtimeconfig.json
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\bin\Release\net6.0\BakeryShop.Identity.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\bin\Release\net6.0\BakeryShop.Identity.pdb
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.csproj.AssemblyReference.cache
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.AssemblyInfoInputs.cache
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.AssemblyInfo.cs
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.csproj.CoreCompileInputs.cache
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\refint\BakeryShop.Identity.dll
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.pdb
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\BakeryShop.Identity.genruntimeconfig.cache
+C:\Users\qdang7\Documents\Personal\BakeryShopV2-Backend\BakeryShop.Identity\obj\Release\net6.0\ref\BakeryShop.Identity.dll

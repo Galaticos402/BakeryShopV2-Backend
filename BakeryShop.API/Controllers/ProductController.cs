@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Azure.Storage.Blobs;
 using BakeryShop.BusinessObject;
 using BakeryShop.BusinessObject.DTOs.Product;
 using BakeryShop.BusinessObject.Response;
 using BakeryShop.Data.Repository;
+using BakeryShop.Data.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -18,10 +20,16 @@ namespace BakeryShop.API.Controllers
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public ProductController(IProductRepository productRepository, IMapper mapper)
+        private readonly BlobServiceClient _blobServiceClient;
+        private readonly IConfiguration _configuration;
+        private readonly IFileService _fileService;
+        public ProductController(IProductRepository productRepository, IMapper mapper, IFileService fileService, IConfiguration configuration, BlobServiceClient blobServiceClient)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _fileService = fileService;
+            _configuration = configuration;
+            _blobServiceClient = blobServiceClient;
         }
         [HttpGet]
         [Route("getall")]
@@ -51,7 +59,18 @@ namespace BakeryShop.API.Controllers
             else
             {
                 response.StatusCode = Ok().StatusCode;
-                response.Result = transactionResult.Resposne;
+                var products = transactionResult.Resposne;
+                var formattedProducts = new List<Product>();
+                foreach(var p in products)
+                {
+                    var url = _fileService.GetFileUri(p.ImageUrl);
+                    var clonedProduct = p.Clone();
+                    clonedProduct.ImageUrl = url;
+                    formattedProducts.Add(clonedProduct);
+                    Console.WriteLine(p.ImageUrl);
+                }
+                response.Result = formattedProducts;
+
                 return Ok(response);
             }
         }

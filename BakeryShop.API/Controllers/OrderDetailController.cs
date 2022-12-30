@@ -3,6 +3,8 @@ using BakeryShop.BusinessObject;
 using BakeryShop.BusinessObject.DTOs.OrderDetail;
 using BakeryShop.BusinessObject.Response;
 using BakeryShop.Data.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +12,7 @@ namespace BakeryShop.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class OrderDetailController : ControllerBase
     {
         private readonly IMapper _mapper;

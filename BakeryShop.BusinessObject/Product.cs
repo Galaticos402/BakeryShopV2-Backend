@@ -29,5 +29,11 @@ namespace BakeryShop.BusinessObject
         public virtual Category Category { get; set; } = null!;
         [JsonIgnore]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+
+        public Product Clone()
+        {
+            var product = (Product)MemberwiseClone();
+            return product;
+        }
     }
 }

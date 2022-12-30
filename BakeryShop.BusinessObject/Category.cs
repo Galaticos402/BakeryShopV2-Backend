@@ -19,5 +19,10 @@ namespace BakeryShop.BusinessObject
         public string? ThumbnailImage { get; set; }
         [JsonIgnore]
         public virtual ICollection<Product> Products { get; set; }
+        public Category Clone()
+        {
+            var category = (Category)MemberwiseClone();
+            return category;
+        }
     }
 }

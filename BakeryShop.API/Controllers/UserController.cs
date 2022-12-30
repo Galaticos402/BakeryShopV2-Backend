@@ -35,12 +35,11 @@ namespace BakeryShop.API.Controllers
             }
             return BadRequest();
         }
-        [HttpGet]
+        [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(string userName, string password)
+        public async Task<IActionResult> Login (UserLoginModel model)
         {
-            var model = new UserLoginModel { Username = userName, Password = password };
             var authenticatedUser = await _userService.Authenticate(model);
             if(authenticatedUser != null)
             {
@@ -51,7 +50,7 @@ namespace BakeryShop.API.Controllers
                     StatusCode = Ok().StatusCode
                 });
             }
-            return NotFound("User not found");
+            return BadRequest("User not found");
         }
     }
 }

@@ -46,7 +46,7 @@ namespace BakeryShop.Data.Service.Impl
                 new Claim(ClaimTypes.Role, roleName)
             };
              var token = new JwtSecurityToken(_configuration.GetSection("Jwt:Issuer").Value, _configuration.GetSection("Jwt:Audience").Value, claims,
-                        expires: DateTime.Now.AddMinutes(15),
+                        expires: DateTime.Now.AddMinutes(60),
                         signingCredentials: credentials);
               return new JwtSecurityTokenHandler().WriteToken(token);   
         }
